@@ -1,0 +1,26 @@
+[
+  {
+    "testName": "Valid Login 1",
+    "email": "validuser1@gmail.com",
+    "password": "Valid@123",
+    "expected": "success"
+  },
+  {
+    "testName": "Valid Login 2",
+    "email": "validuser2@gmail.com",
+    "password": "Valid@456",
+    "expected": "success"
+  },
+  {
+    "testName": "Invalid Login 1",
+    "email": "invaliduser1@gmail.com",
+    "password": "Wrong@123",
+    "expected": "failure"
+  },
+  {
+    "testName": "Invalid Login 2",
+    "email": "invaliduser2@gmail.com",
+    "password": "Invalid@456",
+    "expected": "failure"
+  }
+]

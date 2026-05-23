@@ -1,0 +1,5 @@
+testName,email,password,expected
+Valid Login 1,validuser1@gmail.com,Valid@123,success
+Valid Login 2,validuser2@gmail.com,Valid@456,success
+Invalid Login 1,invaliduser1@gmail.com,Wrong@123,failure
+Invalid Login 2,invaliduser2@gmail.com,Invalid@456,failure
