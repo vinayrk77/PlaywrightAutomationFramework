@@ -1,6 +1,6 @@
-import {Page, expect, Locator} from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
-export class HomePage{
+export class HomePage {
 
     private readonly page: Page;
     //locator
@@ -12,11 +12,11 @@ export class HomePage{
 
 
     //constructor
-    constructor (page:Page){
+    constructor(page: Page) {
         this.page = page;
-        this.lnkMyAccount = page.getByRole('link', { name: 'My Account' }).first();
+        this.lnkMyAccount = page.getByText('My Account').first();
         this.lnkRegister = page.getByRole('link', { name: 'Register' }).first();
-        this.lnkLogin = page.getByRole('link', {name: 'Login'}).first();
+        this.lnkLogin = page.getByRole('link', { name: 'Login' }).first();
         this.txtSearchbox = page.getByPlaceholder('Search');
         this.btnSearch = page.locator('#search button');
     }
@@ -25,50 +25,59 @@ export class HomePage{
 
     //action metods
     //Check if home page exists
-    async isHomePageExists(){
-        let title:string = await this.page.title();
-        if(title)
-        {
+    async isHomePageExists() {
+        let title: string = await this.page.title();
+        if (title) {
             return true;
         }
         return false;
     }
 
     //click my account link
-    async clickMyAccount(){
-        try{
+    async clickMyAccount() {
+        try {
             await this.lnkMyAccount.click();
-        }catch(error){
+        } catch (error) {
             console.log(`Exception occurred while clicking 'My Account': ${error}`);
             throw error;
         }
     }
 
+    //click register
+    async clickRegister() {
+        try {
+            await this.lnkRegister.click();
+        } catch (error) {
+            console.log(`Exception occurred while clicking 'Register': ${error}`);
+            throw error;
+        }
+    }
+
     //click login 
-    async clickLogin(){
-        try{
+    async clickLogin() {
+        try {
             await this.lnkLogin.click();
-        }catch(error){
+        } catch (error) {
             console.log(`Exception occurred while clicking 'Login': ${error}`);
             throw error;
         }
     }
 
     //Enter product name in search box
-    async enterProductName(pName:string){
-        try{
+    async enterProductName(pName: string) {
+        try {
             await this.txtSearchbox.fill(pName);
-        }catch(error){
+        } catch (error) {
             console.log(`Exception occurred while entering 'product name': ${error}`);
             throw error;
         }
     }
 
     //click on search button
-    async clickSearch(pName:string){
-        try{
+    async clickSearch(pName: string) {
+        try {
             await this.txtSearchbox.click();
-        }catch(error){
+        } catch (error) {
             console.log(`Exception occurred while clicking 'search': ${error}`);
             throw error;
         }

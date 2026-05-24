@@ -24,8 +24,8 @@ export class RegistrationPage {
         this.txtLastname = page.getByPlaceholder('Last Name');
         this.txtEmail = page.getByPlaceholder('E-Mail');
         this.txtTelephone = page.getByPlaceholder('Telephone');
-        this.txtPassword = page.getByPlaceholder('Password');
-        this.txtCnfPassword = page.getByPlaceholder('Password Confirm');
+        this.txtPassword = page.getByPlaceholder('Password', { exact: true });
+        this.txtCnfPassword = page.getByPlaceholder('Password Confirm',{ exact: true });
         this.chkSubscription = page.getByRole('radio', { name: 'Yes' });
         this.chkPolicy = page.locator('input[name="agree"]');
         this.btnContinue =  page.getByRole('button', { name: 'Continue' });
