@@ -12,9 +12,9 @@ export class MyAccount{
     constructor(page:Page){
         this.page = page;
 
-        this.myHeading = page.getByRole('heading', { name: 'My Account' });
-        this.lnkMyAccount = page.getByRole('link', { name: 'My Account' });
-        this.lnkLogout = page.getByRole('link', {name: 'Logout'});
+        this.myHeading = page.getByRole('heading', { name: /My account/i });
+        this.lnkMyAccount = page.locator("a[title='My Account']");
+        this.lnkLogout = page.locator("#top-links a:has-text('Logout')");
     }
 
 /**

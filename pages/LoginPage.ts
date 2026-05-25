@@ -16,7 +16,7 @@ export class LoginPage{
         this.txtEmail = page.locator("#input-email");
         this.txtPassword = page.locator("#input-password");
         this.btnLogin = page.getByRole('button', {name: 'Login'});
-        this.txterrormsg = page.locator('.alert-danger');
+        this.txterrormsg = page.locator(".alert-danger");
     }
 
     //Actions
@@ -40,14 +40,20 @@ export class LoginPage{
    /**
     * clicks the login button
     */
-   async clickLogin(){
+   async clickLogin(): Promise<void> {
+
+    await this.btnLogin.waitFor({ state: 'visible' });
+
     await this.btnLogin.click();
-   }
+
+    await this.page.waitForLoadState('networkidle');
+}
 
    /**
  * Verify login fail error message
  */
 async getErrormsg():Promise<string>{
+    console.log(await this.txterrormsg.count());
     return await this.txterrormsg.textContent() ?? '';
 }
 

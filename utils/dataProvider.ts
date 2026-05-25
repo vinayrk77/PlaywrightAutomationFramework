@@ -1,17 +1,17 @@
-import fs from 'fs';
+import * as fs from 'fs';
 import { parse } from 'csv-parse/sync';
 
 export class DataProvider{
 
-static getDataFromJson(filepath: string)
-{
-    let data: string = JSON.parse(fs.readFileSync(filepath, 'utf8'));
+static getDataFromJson(filepath: string) {
+    const fileData = fs.readFileSync(filepath, { encoding: 'utf8' });
+    const data = JSON.parse(fileData);
     return data;
-}    
+}
 
 static getDataFromCsv(filepath: string)
 {
-    let data = parse(fs.readFileSync(filepath), {columns:true,skip_empty_lines:true});
+    let data: any = parse(fs.readFileSync(filepath), {columns:true,skip_empty_lines:true});
     return data;
 }
 }
