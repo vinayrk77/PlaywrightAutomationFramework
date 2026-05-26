@@ -77,6 +77,7 @@ export class HomePage {
     async clickSearch(pName: string) {
         try {
             await this.txtSearchbox.click();
+            await this.btnSearch.click();
         } catch (error) {
             console.log(`Exception occurred while clicking 'search': ${error}`);
             throw error;
