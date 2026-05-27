@@ -1,4 +1,5 @@
 import {Page, Locator} from "@playwright/test";
+import { LogoutPage } from "./LogoutPage";
 
 export class MyAccount{
     private readonly page: Page;
@@ -41,8 +42,9 @@ async isMyPageAccountExists(): Promise <boolean>{
 /**
 * clicks the Logout button
  */
-async clickLogout(): Promise<void>{
+async clickLogout(): Promise<LogoutPage> {
     await this.lnkLogout.click();
+    return new LogoutPage(this.page);
 }
 
 }

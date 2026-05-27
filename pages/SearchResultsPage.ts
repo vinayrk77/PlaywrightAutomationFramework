@@ -1,4 +1,5 @@
 import { Page, Locator } from "@playwright/test";
+import { ProductPage } from "./ProductsPage";
 
 export class SearchResultsPage {
     private readonly page: Page;
@@ -52,7 +53,6 @@ export class SearchResultsPage {
     *@parm - productname - The name of product to select
     * @returns promise<ProductPage> - productPage instance after selecing the product
     */
-   /*
     async selectProduct(productName: string): Promise<ProductPage | null> {
         try {
             const count = await this.searchProducts.count();
@@ -71,7 +71,6 @@ export class SearchResultsPage {
         return null;
 
     }
-    */
 
     /**
     *Get count of products in search results
