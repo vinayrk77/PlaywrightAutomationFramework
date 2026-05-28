@@ -1,14 +1,14 @@
 [
   {
     "testName": "Valid Login 1",
-    "email": "validuser1@gmail.com",
-    "password": "Valid@123",
+    "email": "vinayrk26@gmail.com",
+    "password": "vinay@123",
     "expected": "success"
   },
   {
     "testName": "Valid Login 2",
-    "email": "validuser2@gmail.com",
-    "password": "Valid@456",
+    "email": "ceyapob638@deposin.com",
+    "password": "test@123",
     "expected": "success"
   },
   {
