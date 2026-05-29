@@ -10,7 +10,7 @@ import { SearchResultsPage } from "../pages/SearchResultsPage";
 import { ShoppingCartPage } from "../pages/ShoppingCartPage";
 import { ProductPage } from "../pages/ProductsPage";
 
-test("Execute End to End flow @end-to-end", async ({ page }) => {
+test("Execute End to End flow @end-to-end @regression", async ({ page }) => {
     const config = new TestConfig();
 
     //Navigate to application homepage
