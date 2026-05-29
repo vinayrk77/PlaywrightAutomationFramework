@@ -23,7 +23,7 @@ test.afterEach(async({page})=>{
     await page.close();
 });
 
-test("Verify add to Cart flow", async()=>{
+test("Verify add to Cart flow @sanity", async()=>{
 
     await homePage.enterProductName(config.productName);
 
