@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
+import process from 'process';
 
 test.setTimeout(120000);
+
+test.skip(process.env.CI, 'Skip Flipkart test in GitHub Actions');
 
 test('Flipkart search iphone 17 pro and verify best seller price @sanity', async ({ page }) => {
   await page.goto('https://www.flipkart.com', { waitUntil: 'networkidle' });
