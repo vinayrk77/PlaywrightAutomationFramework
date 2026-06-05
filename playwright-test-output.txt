@@ -1,0 +1,28 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\SearchTshirts.spec.ts:3:5 › Search for T-shirts and verify product appears (1.0m)
+
+
+  1) [chromium] › tests\SearchTshirts.spec.ts:3:5 › Search for T-shirts and verify product appears ─
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: page.fill: Test timeout of 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('input[name="search_query"]')[22m
+
+
+      15 |
+      16 |   // Search for 'T-shirts'
+    > 17 |   await page.fill('input[name="search_query"]', 'T-shirts');
+         |              ^
+      18 |   await page.press('input[name="search_query"]', 'Enter');
+      19 |
+      20 |   // Verify the product is visible in results
+        at C:\Automation Practice\opencartPlaywright\tests\SearchTshirts.spec.ts:17:14
+
+    Error Context: test-results\SearchTshirts-Search-for-T-shirts-and-verify-product-appears-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\SearchTshirts.spec.ts:3:5 › Search for T-shirts and verify product appears ──
