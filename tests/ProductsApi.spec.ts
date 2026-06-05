@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import Ajv from 'ajv';
 
-test('GET post returns expected response and schema', async ({ request }) => {
+test('GET post returns response and schema', async ({ request }) => {
 
   const response = await request.get(
     'https://jsonplaceholder.typicode.com/posts/1'
